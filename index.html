@@ -1,0 +1,290 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Digital Human Body Explorer</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,500;12..96,700;12..96,800&family=IBM+Plex+Mono:wght@400;500&family=Source+Sans+3:wght@400;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<header class="top">
+  <div class="wrap">
+    <div class="top-row">
+      <div class="brand">
+        <strong>Digital Human Body Explorer</strong>
+        <span>IPAS · Kelas X PPLG</span>
+      </div>
+      <button class="theme-btn" id="theme-btn" type="button">Tema</button>
+    </div>
+    <nav class="nav" aria-label="Menu utama">
+      <a href="#beranda" data-nav="beranda">Beranda</a>
+      <a href="#saraf" data-nav="saraf">Sistem saraf</a>
+      <a href="#gerak" data-nav="gerak">Sistem gerak</a>
+      <a href="#alur" data-nav="alur">Alur gerak</a>
+      <a href="#kuis" data-nav="kuis">Kuis</a>
+      <a href="#game" data-nav="game">Arena</a>
+    </nav>
+  </div>
+</header>
+
+<main class="wrap">
+
+<!-- BERANDA -->
+<section data-route="beranda">
+  <div class="hero">
+    <span class="label">Media belajar interaktif</span>
+    <h1>Tangan bergerak karena <em>otak</em> memberi perintah.</h1>
+    <p class="lead">Jelajahi sistem saraf, sistem gerak, dan hubungan keduanya. Gerakkan lengan, jalankan simulasi refleks, lalu uji pemahamanmu lewat kuis.</p>
+    <div class="pipe" aria-label="Jalur impuls dari otak ke otot">
+      <span class="dot" aria-hidden="true"></span>
+      <div class="n"><i></i>Otak</div>
+      <div class="n"><i></i>Sumsum tulang belakang</div>
+      <div class="n"><i></i>Saraf tepi</div>
+      <div class="n"><i></i>Otot</div>
+    </div>
+    <div class="btn-row">
+      <a class="btn primary" href="#saraf" style="text-decoration:none">Mulai dari sistem saraf</a>
+      <a class="btn ghost" href="#kuis" style="text-decoration:none">Langsung ke kuis</a>
+    </div>
+  </div>
+
+  <div class="sec-head">
+    <span class="label">Pertanyaan mendasar</span>
+    <h2>Tiga hal yang akan kamu jawab</h2>
+  </div>
+  <div class="questions">
+    <div class="card"><p class="q">Mengapa tangan dapat bergerak ketika otak memberikan perintah?</p><p class="label">Jawab di Sistem gerak</p></div>
+    <div class="card"><p class="q">Mengapa tubuh dapat merespons rangsangan tertentu secara refleks?</p><p class="label">Jawab di Alur gerak</p></div>
+    <div class="card"><p class="q">Bagaimana media digital dapat menjelaskan proses itu dengan mudah?</p><p class="label">Kamu sedang memakainya</p></div>
+  </div>
+
+  <div class="sec-head">
+    <span class="label">Pilih modul</span>
+    <h2>Jelajahi</h2>
+  </div>
+  <div class="tiles">
+    <a class="tile" href="#saraf"><h3>Sistem saraf</h3><p>Otak, sumsum tulang belakang, dan saraf tepi. Klik tiap bagian pada diagram tubuh.</p><span class="go">Buka modul →</span></a>
+    <a class="tile" href="#gerak"><h3>Sistem gerak</h3><p>Tulang, sendi, dan otot. Tekuk lengan dan lihat bisep dan trisep bekerja bergantian.</p><span class="go">Buka modul →</span></a>
+    <a class="tile" href="#alur"><h3>Alur gerak</h3><p>Bandingkan jalur gerak sadar dan gerak refleks langkah demi langkah.</p><span class="go">Buka modul →</span></a>
+    <a class="tile" href="#kuis"><h3>Kuis</h3><p>Delapan soal pilihan ganda dengan umpan balik dan skor akhir.</p><span class="go">Mulai kuis →</span></a>
+  </div>
+</section>
+
+<!-- SISTEM SARAF -->
+<section data-route="saraf" hidden>
+  <div class="sec-head">
+    <span class="label">Modul sistem saraf</span>
+    <h2>Pusat kendali dan jalur komunikasi tubuh</h2>
+    <p class="lead">Sistem saraf bekerja dalam tiga tugas: menerima rangsangan, mengolah informasi, dan menghasilkan respons.</p>
+  </div>
+
+  <div class="chain card">
+    <div><strong>1. Menerima rangsangan</strong><span>Reseptor menangkap perubahan dari luar atau dalam tubuh.</span></div>
+    <div><strong>2. Mengolah informasi</strong><span>Sistem saraf pusat memproses dan menentukan tanggapan.</span></div>
+    <div><strong>3. Menghasilkan respons</strong><span>Perintah dibawa ke efektor, misalnya otot.</span></div>
+  </div>
+
+  <div class="split">
+    <div class="card figure">
+      <svg id="body" viewBox="0 0 260 420" role="img" aria-label="Diagram tubuh manusia dengan otak, sumsum tulang belakang, dan saraf tepi" data-active="otak">
+        <g fill="none" stroke="var(--body)" stroke-linecap="round" stroke-linejoin="round">
+          <path d="M96 110 L64 190 L50 262" stroke-width="17"/>
+          <path d="M164 110 L196 190 L210 262" stroke-width="17"/>
+          <path d="M112 238 L106 330 L104 404" stroke-width="23"/>
+          <path d="M148 238 L154 330 L156 404" stroke-width="23"/>
+        </g>
+        <rect x="119" y="78" width="22" height="30" fill="var(--body)"/>
+        <path d="M92 102 Q130 92 168 102 L174 238 Q130 254 86 238 Z" fill="var(--body)"/>
+        <ellipse cx="130" cy="46" rx="30" ry="38" fill="var(--body)"/>
+        <g class="part p-tepi" fill="none" stroke="var(--signal)" stroke-linecap="round" stroke-linejoin="round">
+          <path d="M130 118 L96 124 L66 190 L52 258" stroke-width="3"/>
+          <path d="M130 118 L164 124 L194 190 L208 258" stroke-width="3"/>
+          <path d="M130 236 L112 252 L108 330 L106 398" stroke-width="3"/>
+          <path d="M130 236 L148 252 L152 330 L154 398" stroke-width="3"/>
+          <path d="M130 152 L104 158 M130 152 L156 158 M130 192 L106 198 M130 192 L154 198" stroke-width="2"/>
+        </g>
+        <g class="part p-sumsum" fill="none" stroke="var(--signal)" stroke-linecap="round">
+          <path d="M130 60 L130 238" stroke-width="5.5"/>
+        </g>
+        <g class="part p-otak">
+          <ellipse cx="130" cy="42" rx="22" ry="19" fill="var(--signal)"/>
+          <path d="M130 25 C124 36 136 44 130 60" fill="none" stroke="var(--on-signal)" stroke-width="2" stroke-linecap="round"/>
+        </g>
+      </svg>
+    </div>
+
+    <div class="card info">
+      <div class="seg" role="group" aria-label="Pilih bagian sistem saraf">
+        <button type="button" data-k="otak" aria-pressed="true">Otak</button>
+        <button type="button" data-k="sumsum" aria-pressed="false">Sumsum tulang belakang</button>
+        <button type="button" data-k="tepi" aria-pressed="false">Saraf tepi</button>
+      </div>
+      <h3 id="s-title"></h3>
+      <dl>
+        <div><dt>Fungsi utama</dt><dd id="s-fungsi"></dd></div>
+        <div><dt>Contoh dalam kehidupan</dt><dd id="s-contoh"></dd></div>
+        <div><dt>Perannya dalam respons gerak</dt><dd id="s-peran"></dd></div>
+      </dl>
+    </div>
+  </div>
+
+  <div class="table-wrap">
+    <table>
+      <thead><tr><th>Komponen</th><th>Fungsi utama</th><th>Contoh dalam kehidupan</th></tr></thead>
+      <tbody>
+        <tr><td>Otak</td><td>Pusat pengolahan informasi dan koordinasi tubuh.</td><td>Memutuskan mengambil buku setelah melihatnya di meja.</td></tr>
+        <tr><td>Sumsum tulang belakang</td><td>Jalur penghantar impuls saraf dan pusat refleks tertentu.</td><td>Tangan tertarik saat menyentuh benda panas.</td></tr>
+        <tr><td>Saraf tepi</td><td>Menghubungkan sistem saraf pusat dengan bagian tubuh.</td><td>Membawa sensasi sentuhan dari jari ke sistem saraf pusat.</td></tr>
+      </tbody>
+    </table>
+  </div>
+  <div class="btn-row"><a class="btn primary" href="#gerak" style="text-decoration:none">Lanjut ke sistem gerak</a></div>
+</section>
+
+<!-- SISTEM GERAK -->
+<section data-route="gerak" hidden>
+  <div class="sec-head">
+    <span class="label">Modul sistem gerak</span>
+    <h2>Tulang, sendi, dan otot bekerja sama</h2>
+    <p class="lead">Tulang menjadi penopang, sendi menjadi poros, dan otot menjadi penarik. Diagram lengan di bawah menunjukkan letak ketiganya.</p>
+  </div>
+
+  <div class="card arm-card">
+    <svg id="arm" viewBox="0 0 460 320" role="img" aria-label="Diagram lengan dengan sendi siku, otot bisep di depan, dan trisep di belakang">
+      <ellipse id="tri" class="muscle" cx="200" cy="108" rx="12" ry="52" style="fill-opacity:.45"/>
+      <ellipse id="bi" class="muscle" cx="260" cy="108" rx="12" ry="52" style="fill-opacity:.45"/>
+      <rect class="bone" x="222" y="34" width="16" height="148" rx="8"/>
+      <g id="fore" transform="rotate(0 230 175)">
+        <rect class="bone" x="219" y="168" width="22" height="134" rx="10"/>
+      </g>
+      <circle class="joint" cx="230" cy="175" r="13"/>
+      <circle class="joint" cx="230" cy="34" r="11"/>
+
+      <g class="t">
+        <text x="138" y="64" text-anchor="end">Tulang lengan atas</text>
+        <line class="lead-line" x1="146" y1="60" x2="220" y2="60"/>
+        <text x="138" y="112" text-anchor="end">Trisep (belakang)</text>
+        <line class="lead-line" x1="146" y1="108" x2="172" y2="108"/>
+        <text x="138" y="179" text-anchor="end">Sendi siku</text>
+        <line class="lead-line" x1="146" y1="175" x2="214" y2="175"/>
+        <g id="fore-label">
+          <text x="138" y="254" text-anchor="end">Tulang lengan bawah</text>
+          <line class="lead-line" x1="146" y1="250" x2="217" y2="250"/>
+        </g>
+        <text x="300" y="52">Bisep (depan)</text>
+        <line class="lead-line" x1="296" y1="50" x2="270" y2="72"/>
+      </g>
+    </svg>
+
+    <p class="lead" style="font-size:1rem">Saat lengan ditekuk, otot bisep berkontraksi (memendek dan menebal) sementara trisep relaksasi. Saat lengan diluruskan, yang terjadi sebaliknya. Dua otot yang bekerja berpasangan ini membuat sendi siku bisa bergerak bolak-balik.</p>
+  </div>
+
+  <div class="cards3">
+    <div class="card"><span class="swatch" style="background:var(--bone-edge)"></span><h3>Tulang</h3><p>Menopang tubuh dan melindungi organ. Tengkorak melindungi otak, tulang rusuk melindungi jantung dan paru-paru.</p></div>
+    <div class="card"><span class="swatch" style="background:var(--ink)"></span><h3>Sendi</h3><p>Menghubungkan tulang dan memungkinkan gerakan tertentu. Siku bergerak seperti engsel pintu, bahu bergerak ke banyak arah.</p></div>
+    <div class="card"><span class="swatch" style="background:var(--muscle)"></span><h3>Otot</h3><p>Berkontraksi dan relaksasi untuk menghasilkan gerakan. Otot hanya menarik, jadi gerakan bolak-balik memerlukan pasangan otot.</p></div>
+  </div>
+
+  <div class="table-wrap">
+    <table>
+      <thead><tr><th>Komponen</th><th>Fungsi utama</th><th>Contoh dalam kehidupan</th></tr></thead>
+      <tbody>
+        <tr><td>Tulang</td><td>Menopang tubuh dan melindungi organ.</td><td>Tulang tengkorak melindungi otak saat kepala terbentur ringan.</td></tr>
+        <tr><td>Sendi</td><td>Menghubungkan tulang dan memungkinkan gerakan tertentu.</td><td>Sendi siku menekuk saat kamu mengangkat gelas.</td></tr>
+        <tr><td>Otot</td><td>Berkontraksi dan relaksasi untuk menghasilkan gerakan.</td><td>Otot bisep memendek saat kamu membawa tas di depan badan.</td></tr>
+      </tbody>
+    </table>
+  </div>
+  <div class="btn-row"><a class="btn primary" href="#alur" style="text-decoration:none">Lanjut ke alur gerak</a></div>
+</section>
+
+<!-- ALUR GERAK -->
+<section data-route="alur" hidden>
+  <div class="sec-head">
+    <span class="label">Hubungan sistem saraf dan gerak</span>
+    <h2>Dari rangsangan sampai respons</h2>
+    <p class="lead">Rangsangan diterima reseptor, informasi diteruskan lewat jalur saraf dan diproses, lalu respons dihasilkan oleh efektor seperti otot.</p>
+  </div>
+
+  <div class="card mode">
+    <div class="seg" role="group" aria-label="Pilih jenis gerak">
+      <button type="button" data-m="sadar" aria-pressed="true">Gerak sadar: mengambil buku</button>
+      <button type="button" data-m="refleks" aria-pressed="false">Gerak refleks: menarik tangan</button>
+    </div>
+    <div class="legend" aria-hidden="true">
+      <span><i style="border-color:var(--signal)"></i>Jalur masuk</span>
+      <span><i style="border-color:var(--center)"></i>Pusat pengolah</span>
+      <span><i style="border-color:var(--muscle)"></i>Jalur keluar</span>
+    </div>
+    <div class="btn-row">
+      <button class="btn primary" id="a-play" type="button">Jalankan simulasi</button>
+      <button class="btn ghost" id="a-next" type="button">Langkah berikutnya</button>
+      <button class="btn ghost" id="a-reset" type="button">Ulangi</button>
+    </div>
+    <ol class="track" id="track"></ol>
+    <p class="safety"><b>Keselamatan.</b> Jangan mencoba menyentuh benda panas atau melakukan tindakan berisiko. Gunakan simulasi ini sebagai gantinya.</p>
+  </div>
+
+  <div class="table-wrap">
+    <table>
+      <thead><tr><th>Pembeda</th><th>Gerak sadar</th><th>Gerak refleks</th></tr></thead>
+      <tbody>
+        <tr><td>Pusat pengolah</td><td>Otak</td><td>Sumsum tulang belakang (untuk refleks tertentu)</td></tr>
+        <tr><td>Disengaja</td><td>Ya, diputuskan oleh otak</td><td>Tidak, terjadi tanpa menunggu perintah sadar</td></tr>
+        <tr><td>Jalur</td><td>Lebih panjang karena melewati pengolahan di otak</td><td>Lebih pendek dan langsung</td></tr>
+        <tr><td>Contoh</td><td>Mengambil buku, menulis, berjalan ke kelas</td><td>Menarik tangan saat menyentuh benda panas, berkedip</td></tr>
+      </tbody>
+    </table>
+  </div>
+  <div class="btn-row"><a class="btn primary" href="#kuis" style="text-decoration:none">Uji pemahamanmu</a></div>
+</section>
+
+<!-- KUIS -->
+<section data-route="kuis" hidden>
+  <div class="sec-head">
+    <span class="label">Kuis interaktif</span>
+    <h2>Seberapa paham kamu?</h2>
+  </div>
+
+  <div class="card quiz" id="quiz">
+    <div id="q-start" style="display:flex;flex-direction:column;gap:1rem">
+      <p>Ada 8 soal pilihan ganda. Setelah kamu memilih jawaban, program langsung memeriksanya dan menampilkan penjelasan. Skor akhir muncul di akhir kuis.</p>
+      <div class="btn-row"><button class="btn primary" id="q-go" type="button">Mulai kuis</button></div>
+    </div>
+
+    <div id="q-run" hidden style="display:flex;flex-direction:column;gap:1rem">
+      <div class="qhead"><span class="label" id="q-count"></span><span class="label" id="q-score"></span></div>
+      <div class="meter"><i id="q-bar"></i></div>
+      <h3 id="q-text"></h3>
+      <div class="opts" id="q-opts" role="group" aria-label="Pilihan jawaban"></div>
+      <div class="fb" id="q-fb" aria-live="polite" hidden></div>
+      <div class="btn-row"><button class="btn primary" id="q-next" type="button" hidden>Lanjut</button></div>
+    </div>
+
+    <div id="q-end" hidden style="display:flex;flex-direction:column;gap:1rem">
+      <span class="label">Skor akhir</span>
+      <div class="score-big" id="e-score"></div>
+      <p id="e-msg"></p>
+      <div id="e-review"></div>
+      <div class="btn-row">
+        <button class="btn primary" id="q-again" type="button">Ulangi kuis</button>
+        <a class="btn ghost" href="#alur" style="text-decoration:none">Buka lagi materi</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+</main>
+
+<footer>
+  <div class="wrap">
+    <span>SMK Raden Umar Said Kudus · IPAS · Kelas X PPLG</span>
+    <span>Proyek pembelajaran mendalam (PjBL): Digital Human Body Explorer</span>
+  </div>
+</footer>
+<script src="script.js"></script>
+</body>
+</html>
